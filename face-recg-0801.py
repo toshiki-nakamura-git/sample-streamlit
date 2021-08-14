@@ -29,13 +29,13 @@ if uploaded_file is not None:
         }
 
     res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
-    fnt = ImageFont.load("arial.pil")
+#    font = ImageFont.load("arial.pil")
     results = res.json()
 #
     for result in results:
         rect = result['faceRectangle']
-#        age_test = result['faceAttributes']['age']
-#        emo_test = result['faceAttributes']['emotion']['happiness']
+        age_test = result['faceAttributes']['age']
+        emo_test = result['faceAttributes']['emotion']['happiness']
         draw = ImageDraw.Draw(img)
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
 #        draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=fnt)
