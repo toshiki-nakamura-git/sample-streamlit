@@ -31,7 +31,7 @@ if uploaded_file is not None:
     results = res.json()
 #
     for result in results:
-        font = ImageFont.truetype("arial.ttf", 15)
+#        font = ImageFont.truetype("arial.ttf", 15)
         rect = result['faceRectangle']
         age_test = result['faceAttributes']['age']
         emo_test = result['faceAttributes']['emotion']['happiness']
