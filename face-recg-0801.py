@@ -40,8 +40,7 @@ if uploaded_file is not None:
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
         draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=font)
         draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test))
-        st.write('推定年齢は、',str(age_test),'歳です！')
-        st.write('推定ハッピーレベルは、',str(emo_test),'歳です！')
+        st.write('推定年齢は、',str(age_test),'歳です！　推定ハッピーレベルは',str(emo_test),'です！')
 
     st.image(img,caption='uploded image',use_column_width=True)
    
