@@ -13,6 +13,8 @@ face_api_url = "https://facetest0808.cognitiveservices.azure.com/face/v1.0/detec
 #
 st.title('顔認識アプリ')
 uploaded_file = st.file_uploader("choose an Image...",type ="jpg")
+
+font = ImageFont.load("arial.pil")
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     with io.BytesIO()as output:
@@ -27,9 +29,7 @@ if uploaded_file is not None:
         'returnFaceId': 'true',
         'returnFaceAttributes':'age,gender,headPose,emotion,smile,hair,makeup,glasses'
         }
-
     res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
-#    font = ImageFont.load("arial.pil")
     results = res.json()
 #
     for result in results:
@@ -38,7 +38,7 @@ if uploaded_file is not None:
         emo_test = result['faceAttributes']['emotion']['happiness']
         draw = ImageDraw.Draw(img)
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
-#        draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=fnt)
-#        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test),font=fnt)
+#        draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=font)
+#        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test),font=font)
 
     st.image(img,caption='uploded image',use_column_width=True)
