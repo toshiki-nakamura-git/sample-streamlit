@@ -11,7 +11,7 @@ face_api_url = "https://facetest0808.cognitiveservices.azure.com/face/v1.0/detec
 
 #
 st.title('顔認識アプリ')
-st.write(##'アップロードされた画像の顔を認識し、推定年齢とハッピーレベル（0.0 ～ 最大値1.0）を表示するアプリです。'##)
+st.write('アップロードされた画像の顔を認識し、推定年齢とハッピーレベル（0.0 ～ 最大値1.0）を表示するアプリです。')
 uploaded_file = st.file_uploader("choose an Image...",type ="jpg")
 
 if uploaded_file is not None:
@@ -31,7 +31,7 @@ if uploaded_file is not None:
     res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
     results = res.json()
     font = ImageFont.load_default()
-#
+
     for result in results:
         rect = result['faceRectangle']
         age_test = result['faceAttributes']['age']
@@ -47,4 +47,4 @@ if uploaded_file is not None:
             st.write('女性の推定年齢は、',str(age_test),'歳です。　推定ハッピーレベルは',str(emo_test),'です。')
 
     st.image(img,caption='uploded image',use_column_width=True)
-   
+    
