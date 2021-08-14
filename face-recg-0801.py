@@ -29,8 +29,8 @@ if uploaded_file is not None:
         }
 
     res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
-    fnt = ImageFont.truetype("arial.ttf", 20)
-#    results = res.json()
+#    fnt = ImageFont.truetype("arial.ttf", 20)
+    results = res.json()
 #
 #    for result in results:
 #        rect = result['faceRectangle']
