@@ -38,6 +38,6 @@ if uploaded_file is not None:
         draw = ImageDraw.Draw(img)
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
         draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test))
-#        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test),font=font)
+        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test))
 
     st.image(img,caption='uploded image',use_column_width=True)
