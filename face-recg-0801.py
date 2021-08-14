@@ -28,7 +28,7 @@ if uploaded_file is not None:
         'returnFaceAttributes':'age,gender,headPose,emotion,smile,hair,makeup,glasses'
         }
 
-#    res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
+    res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
 #    results = res.json()
 #    fnt = ImageFont.truetype("arial.ttf", 20)
 #
