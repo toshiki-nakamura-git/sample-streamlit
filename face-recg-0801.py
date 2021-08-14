@@ -15,9 +15,9 @@ st.title('顔認識アプリ')
 uploaded_file = st.file_uploader("choose an Image...",type ="jpg")
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
-#    with io.BytesIO()as output:
-#        img.save(output,format='JPEG')
-#        binary_img = output.getvalue()
+    with io.BytesIO()as output:
+        img.save(output,format='JPEG')
+        binary_img = output.getvalue()
 #    headers = {
 #        'Content-Type': 'application/octet-stream',
 #        'Ocp-Apim-Subscription-Key': "61491fab089b434eb9415b19344d658e"
