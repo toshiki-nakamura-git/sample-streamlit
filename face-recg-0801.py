@@ -15,23 +15,23 @@ st.title('顔認識アプリ')
 uploaded_file = st.file_uploader("choose an Image...",type ="jpg")
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
-    with io.BytesIO()as output:
-        img.save(output,format='JPEG')
-        binary_img = output.getvalue()
-    headers = {
-        'Content-Type': 'application/octet-stream',
-        'Ocp-Apim-Subscription-Key': "61491fab089b434eb9415b19344d658e"
-        }
-
-    params = {
-        'returnFaceId': 'true',
-        'returnFaceAttributes':'age,gender,headPose,emotion,smile,hair,makeup,glasses'
-        }
-
-    res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
-    results = res.json()
-    fnt = ImageFont.truetype("arial.ttf", 20)
-
+#    with io.BytesIO()as output:
+#        img.save(output,format='JPEG')
+#        binary_img = output.getvalue()
+#    headers = {
+#        'Content-Type': 'application/octet-stream',
+#        'Ocp-Apim-Subscription-Key': "61491fab089b434eb9415b19344d658e"
+#        }
+#
+#    params = {
+#        'returnFaceId': 'true',
+#        'returnFaceAttributes':'age,gender,headPose,emotion,smile,hair,makeup,glasses'
+#        }
+#
+#    res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
+#    results = res.json()
+#    fnt = ImageFont.truetype("arial.ttf", 20)
+#
 #    for result in results:
 #        rect = result['faceRectangle']
 #        age_test = result['faceAttributes']['age']
