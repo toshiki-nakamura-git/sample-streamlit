@@ -32,14 +32,14 @@ if uploaded_file is not None:
     results = res.json()
     fnt = ImageFont.truetype("arial.ttf", 20)
 
-    for result in results:
-        rect = result['faceRectangle']
-        age_test = result['faceAttributes']['age']
-        emo_test = result['faceAttributes']['emotion']['happiness']
-
-        draw = ImageDraw.Draw(img)
-        draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
-        draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=fnt)
-        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test),font=fnt)
+#    for result in results:
+#        rect = result['faceRectangle']
+#        age_test = result['faceAttributes']['age']
+#        emo_test = result['faceAttributes']['emotion']['happiness']
+#
+#        draw = ImageDraw.Draw(img)
+#        draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
+#        draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=fnt)
+#        draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test),font=fnt)
 
     st.image(img,caption='uploded image',use_column_width=True)
