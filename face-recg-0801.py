@@ -13,7 +13,7 @@ face_api_url = "https://facetest0808.cognitiveservices.azure.com/face/v1.0/detec
 st.title('顔認識アプリ')
 uploaded_file = st.file_uploader("choose an Image...",type ="jpg")
 
-#font = ImageFont.load("arial.pil")
+font = ImageFont.load("arial.pil")
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     with io.BytesIO()as output:
