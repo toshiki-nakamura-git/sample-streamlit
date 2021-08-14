@@ -20,7 +20,7 @@ if uploaded_file is not None:
         binary_img = output.getvalue()
     headers = {
         'Content-Type': 'application/octet-stream',
-        'Ocp-Apim-Subscription-Key': sub_key
+        'Ocp-Apim-Subscription-Key': "61491fab089b434eb9415b19344d658e"
         }
 
     params = {
