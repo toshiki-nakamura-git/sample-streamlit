@@ -1,11 +1,10 @@
 print("Hello world_0801!")
 import streamlit as st
-from PIL import Image
 #
 import json, os, requests,io
-from PIL import Image
+from PIL import Image, ImageFont
 from PIL import ImageDraw
-from PIL import ImageFont
+
 #
 sub_key = "61491fab089b434eb9415b19344d658e"
 face_api_url = "https://facetest0808.cognitiveservices.azure.com/face/v1.0/detect"
