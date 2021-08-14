@@ -35,12 +35,16 @@ if uploaded_file is not None:
     for result in results:
         rect = result['faceRectangle']
         age_test = result['faceAttributes']['age']
+        gendar_test = result['faceAttributes']['gender']
         emo_test = result['faceAttributes']['emotion']['happiness']
         draw = ImageDraw.Draw(img)
         draw.rectangle([(rect['left'],rect['top']),(rect['left']+rect['width'],rect['top']+rect['height'])], fill=None, outline = 'green', width =5)
         draw.text((rect['left']+10,rect['top']+10),"AGE : "+str(age_test),font=font)
         draw.text((rect['left']+10,rect['top']+rect['height']+10),"Happy Level : "+str(emo_test))
-        st.write('推定年齢は、',str(age_test),'歳です！　推定ハッピーレベルは',str(emo_test),'です！')
+        if gendar_test == 'male':
+            st.write('男性の推定年齢は、',str(age_test),'歳です！　推定ハッピーレベルは',str(emo_test),'です！')
+        else:
+            st.write('女性の推定年齢は、',str(age_test),'歳です！　推定ハッピーレベルは',str(emo_test),'です！')
 
     st.image(img,caption='uploded image',use_column_width=True)
    
