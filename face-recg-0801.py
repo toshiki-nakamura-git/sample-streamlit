@@ -29,7 +29,7 @@ if uploaded_file is not None:
         }
     res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
     results = res.json()
-    font = ImageFont.truetype("/ipagp.ttf", 30)
+    font = ImageFont.truetype("ipagp.ttf", 30)
 #
     for result in results:
         rect = result['faceRectangle']
